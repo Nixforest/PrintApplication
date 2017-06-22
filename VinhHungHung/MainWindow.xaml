@@ -1,0 +1,125 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:CustomControl="clr-namespace:VinhHungHung.CustomControl" x:Class="VinhHungHung.MainWindow"
+        Title="Quản lý In ấn" Height="768" Width="1366">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Đăng nhập"/>
+                <MenuItem Header="Đăng xuất"/>
+                <Separator/>
+                <MenuItem Header="Đóng"/>
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter></GridSplitter>
+            <Grid Grid.Column="0" Background="#FF3A55B0" x:Name="gridReport" Height="29.7cm" Width="21cm">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <FlowDocumentScrollViewer Grid.Column="0" x:Name="aa" VerticalScrollBarVisibility="Auto">
+                    <FlowDocument x:Name="printArea" PagePadding="0">
+                        <!--<Paragraph>
+                            <Image Source="http://www.wpf-tutorial.com/images/logo.png" Height="90" Margin="0,0,30,0" />
+                            <Run FontSize="120">WPF</Run>
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Run Text="WPF, which stands for "/>
+                            <Bold>
+                                <Run Text="Windows Presentation Foundation"/>
+                            </Bold>
+                            <Run Text=" , is Microsoft's latest approach to a GUI framework, used with the .NET"/>
+                            <Run Text=" framework. Some advantages include:"/>
+                        </Paragraph>-->
+                        <BlockUIContainer>
+                            <Grid x:Name="gridData">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </BlockUIContainer>
+                        <!--<List x:Name="listLogoPrint">
+                            <ListItem>
+                                <Paragraph>
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <CustomControl:Logo Width="150" Height="150" />
+                                </Paragraph>
+                            </ListItem>
+                        </List>-->
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+            </Grid>
+            <Grid Grid.Column="1" MinWidth="320">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Button x:Name="btnAdd" Content="Thêm" Width="64" Click="btnAdd_Click"/>
+                    <Button x:Name="btnDel" Content="Xóa" Width="64" Click="btnDel_Click"/>
+                    <Button x:Name="btnPrint" Content="In" Width="64" Click="btnPrint_Click"/>
+                    <Button x:Name="btnPreview" Content="Xem trước" Width="64" Click="btnPreview_Click"/>
+                    <Button x:Name="btnLogoManager" Content="Mẫu in" Width="64" Click="btnLogoManager_Click"/>
+                </StackPanel>
+                <ListView  x:Name="lstLogo" Margin="0,0,0,0" Grid.Row="1">
+                </ListView>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
