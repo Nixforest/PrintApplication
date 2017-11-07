@@ -123,19 +123,21 @@ namespace VinhHungHung
             {
                 for (int j = 0; j < ((Logo)item).Quantity; j++)
                 {
-                    int index = i % 6;
-                    int rowIdx = i / 6;
+                    int index = i % 4;
+                    int rowIdx = i / 4;
                     if (index == 0)
                     {
                         RowDefinition row = new RowDefinition();
                         gridData.RowDefinitions.Add(row);
                     }
                     Logo logo = new Logo((Logo)item);
-                    logo.Width = 130;
-                    logo.Height = 130;
-                    logo.Background = color;
+                    Double size = Double.Parse(txtSize.Text);
+                    logo.Width = size;
+                    logo.Height = size;
+                    //logo.Background = color;
                     Grid.SetRow(logo, rowIdx);
                     Grid.SetColumn(logo, index);
+                    logo.printMode();
                     gridData.Children.Add(logo);
                     i++;
                 }
@@ -217,6 +219,6 @@ namespace VinhHungHung
         {
             LogoManager logoMan = new LogoManager();
             logoMan.ShowDialog();
-        } 
+        }
     }
 }

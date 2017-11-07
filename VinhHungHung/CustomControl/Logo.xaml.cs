@@ -37,7 +37,8 @@ namespace VinhHungHung.CustomControl
             Param_2 = "5000M",
             Param_3 = "Tkt No",
             Param_4 = "120",
-            Param_5 = "CS6504"
+            Param_5 = "CS6504",
+            Param_6 = "24102017"
         };
 
         public LogoModel Model
@@ -54,6 +55,7 @@ namespace VinhHungHung.CustomControl
             this.Param3 = model.Param_3;
             this.Param4 = model.Param_4;
             this.Param5 = model.Param_5;
+            this.Param6 = model.Param_6;
             LayoutRoot.DataContext = this;
         }
         public Logo(Logo copy)
@@ -64,6 +66,7 @@ namespace VinhHungHung.CustomControl
             this.Param3 = copy.Param3;
             this.Param4 = copy.Param4;
             this.Param5 = copy.Param5;
+            this.Param6 = copy.Param6;
             LayoutRoot.DataContext = this;
         }
         #region Dependency Properties
@@ -136,6 +139,20 @@ namespace VinhHungHung.CustomControl
         {
             get { return (String)GetValue(Param5Property); }
             set { SetValue(Param5Property, value); }
+        }
+        // <summary>
+        /// Identified the Param6 dependency property
+        /// </summary>
+        public static readonly DependencyProperty Param6Property =
+            DependencyProperty.Register("Param6", typeof(String),
+            typeof(Logo), new PropertyMetadata(""));
+        /// <summary>
+        /// Gets or sets the Label which is displayed next to the field
+        /// </summary>
+        public String Param6
+        {
+            get { return (String)GetValue(Param6Property); }
+            set { SetValue(Param6Property, value); }
         }
         // <summary>
         /// Identified the isEditable dependency property
@@ -226,6 +243,7 @@ namespace VinhHungHung.CustomControl
                 tbxParam3.Visibility = Visibility.Visible;
                 tbxParam4.Visibility = Visibility.Visible;
                 tbxParam5.Visibility = Visibility.Visible;
+                tbxParam6.Visibility = Visibility.Visible;
             }
             else
             {
@@ -234,6 +252,7 @@ namespace VinhHungHung.CustomControl
                 tbxParam3.Visibility = Visibility.Hidden;
                 tbxParam4.Visibility = Visibility.Hidden;
                 tbxParam5.Visibility = Visibility.Hidden;
+                tbxParam6.Visibility = Visibility.Hidden;
             }
         }
 
@@ -250,6 +269,7 @@ namespace VinhHungHung.CustomControl
                 lblParam3.Visibility = Visibility.Visible;
                 lblParam4.Visibility = Visibility.Visible;
                 lblParam5.Visibility = Visibility.Visible;
+                lblParam6.Visibility = Visibility.Visible;
             }
             else
             {
@@ -258,6 +278,7 @@ namespace VinhHungHung.CustomControl
                 lblParam3.Visibility = Visibility.Hidden;
                 lblParam4.Visibility = Visibility.Hidden;
                 lblParam5.Visibility = Visibility.Hidden;
+                lblParam6.Visibility = Visibility.Hidden;
             }
         }
 
@@ -311,6 +332,17 @@ namespace VinhHungHung.CustomControl
             {
                 tbxQty.Visibility = Visibility.Hidden;
             }
+        }
+        public void printMode()
+        {
+            btnEdit.Visibility = Visibility.Hidden;
+            centerEllipse.Visibility = Visibility.Hidden;
+            tbxQty.Visibility = Visibility.Hidden;
+            boundEllipse.Visibility = Visibility.Hidden;
+            lblParam1.Visibility = Visibility.Hidden;
+            lblParam2.Visibility = Visibility.Hidden;
+            lblParam3.Visibility = Visibility.Hidden;
+            lblParam4.Visibility = Visibility.Hidden;
         }
     }
 }

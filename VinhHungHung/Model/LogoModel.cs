@@ -39,6 +39,13 @@ namespace VinhHungHung.Model
             get { return param_5; }
             set { param_5 = value; }
         }
+        private string param_6;
+
+        public string Param_6
+        {
+            get { return param_6; }
+            set { param_6 = value; }
+        }
 
         public string Param_1
         {

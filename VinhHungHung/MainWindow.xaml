@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:CustomControl="clr-namespace:VinhHungHung.CustomControl" x:Class="VinhHungHung.MainWindow"
-        Title="Quản lý In ấn" Height="768" Width="1366">
+        Title="Quản lý In ấn" Height="28.65cm" Width="1370" Icon="Resources/icon.jpg">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -18,13 +18,19 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <GridSplitter></GridSplitter>
-            <Grid Grid.Column="0" Background="#FF3A55B0" x:Name="gridReport" Height="29.7cm" Width="21cm">
+            <Grid Grid.Column="0" x:Name="gridReport" Height="28.65cm" Width="12.5cm">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/mainBackground_ver2.jpg" AlignmentX="Left" TileMode="FlipY"/>
+                </Grid.Background>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <FlowDocumentScrollViewer Grid.Column="0" x:Name="aa" VerticalScrollBarVisibility="Auto">
+                <FlowDocumentScrollViewer Grid.Column="0" x:Name="aa" VerticalScrollBarVisibility="Hidden" BorderBrush="Black" BorderThickness="1">
                     <FlowDocument x:Name="printArea" PagePadding="0">
+                        <!--<FlowDocument.Background>
+                            <ImageBrush ImageSource="Resources/background.jpg"/>
+                        </FlowDocument.Background>-->
                         <!--<Paragraph>
                             <Image Source="http://www.wpf-tutorial.com/images/logo.png" Height="90" Margin="0,0,30,0" />
                             <Run FontSize="120">WPF</Run>
@@ -38,27 +44,45 @@
                             <Run Text=" , is Microsoft's latest approach to a GUI framework, used with the .NET"/>
                             <Run Text=" framework. Some advantages include:"/>
                         </Paragraph>-->
-                        <BlockUIContainer>
-                            <Grid x:Name="gridData">
+                        <BlockUIContainer >
+                            <Grid x:Name="gridData" Margin="19,0,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
+                                    <!--<ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />-->
                                 </Grid.ColumnDefinitions>
+                                <CustomControl:Logo Width="112" Height="112"/>
                             </Grid>
                         </BlockUIContainer>
                         <!--<List x:Name="listLogoPrint">
                             <ListItem>
                                 <Paragraph>
-                                    <CustomControl:Logo Width="150" Height="150" />
-                                    <CustomControl:Logo Width="150" Height="150" />
-                                    <CustomControl:Logo Width="150" Height="150" />
-                                    <CustomControl:Logo Width="150" Height="150" />
-                                    <CustomControl:Logo Width="150" Height="150" />
-                                    <CustomControl:Logo Width="150" Height="150" />
+                                    <InlineUIContainer>
+                                        <CustomControl:Logo Width="86" Height="123" />
+                                    </InlineUIContainer>
+                                    <Run Text=" "/>
+                                    <InlineUIContainer>
+                                        <CustomControl:Logo Width="150" Height="150" />
+                                    </InlineUIContainer>
+                                    <Run Text=" "/>
+                                    <InlineUIContainer>
+                                        <CustomControl:Logo Width="150" Height="150" />
+                                    </InlineUIContainer>
+                                    <Run Text=" "/>
+                                    <InlineUIContainer>
+                                        <CustomControl:Logo Width="150" Height="150" />
+                                    </InlineUIContainer>
+                                    <Run Text=" "/>
+                                    <InlineUIContainer>
+                                        <CustomControl:Logo Width="150" Height="150" />
+                                    </InlineUIContainer>
+                                    <Run Text=" "/>
+                                    <InlineUIContainer>
+                                        <CustomControl:Logo Width="150" Height="150" />
+                                    </InlineUIContainer>
                                 </Paragraph>
                             </ListItem>
                             <ListItem>
@@ -116,6 +140,7 @@
                     <Button x:Name="btnPrint" Content="In" Width="64" Click="btnPrint_Click"/>
                     <Button x:Name="btnPreview" Content="Xem trước" Width="64" Click="btnPreview_Click"/>
                     <Button x:Name="btnLogoManager" Content="Mẫu in" Width="64" Click="btnLogoManager_Click"/>
+                    <TextBox x:Name="txtSize" Width="64" Text="107"/>
                 </StackPanel>
                 <ListView  x:Name="lstLogo" Margin="0,0,0,0" Grid.Row="1">
                 </ListView>
